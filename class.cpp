@@ -69,19 +69,24 @@ class teacher {
 
                         class studennt{
                             public: 
-                            studennt(){
-                                cout << "You Called me!"<<endl;
+                            studennt(){ // Constructor Made by programmer.
+                                cout << "You Called me!"<<endl; 
                                 dept = "CSE";
                             };
                             string name;
                             double regNo;
                             string dept;
                         };
-
+                        // NOTE:- If a programmer does not make its own costructor then compiler automatically create a constructor 
                         int main(){
-                            studennt s1;
-                            cout << s1.dept;
+                            studennt s1; // Constructor call
+                            // cout << s1.dept;
                         }
+                            // Properties of Constructor 
+                            // 1.Name Same as class
+                            // 2.constructor does not have a return type 
+                            // 3.Only called once (automatically) ,at Object creation .
+                            // 4.Memory allocation happens when costructor is called .
 
             // 2.Abstraction    --> 
             // 3.Inheritance 
