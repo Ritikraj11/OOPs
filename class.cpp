@@ -87,6 +87,7 @@ class teacher {
                             // 2.constructor does not have a return type 
                             // 3.Only called once (automatically) ,at Object creation .
                             // 4.Memory allocation happens when costructor is called .
+                            
 
             // 2.Abstraction    --> 
             // 3.Inheritance 
