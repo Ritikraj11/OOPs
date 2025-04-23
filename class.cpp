@@ -30,17 +30,17 @@ class teacher {
 
 
 
-// int main(){
-//     teacher t1,t2,t3,t4;
-//     t1.name= "Ritik";
-//     t1.dept = "CSE";
-//     // t1.salary = 110000; // can't access salary because it is in private class
-//     // cout << t1.name<<endl ;
-//     t1.setSalary(400000);
-//     // cout << t1.getSalary();
+int main(){
+    teacher t1,t2,t3,t4;
+    t1.name= "Ritik";
+    t1.dept = "CSE";
+    // t1.salary = 110000; // can't access salary because it is in private class
+    // cout << t1.name<<endl ;
+    t1.setSalary(400000);
+    // cout << t1.getSalary();
 
-//     return 0;
-// } 
+    return 0;
+} 
 
 
 
@@ -53,42 +53,91 @@ class teacher {
                             
                 // Concept of Data hiding //
 
-                        class Account {
-                            private:
-                            double accountBalance; // This is the Data hiding concept
-                                                   // these data are not accessible anymore.
-                            string password;
+                        // class Account {
+                        //     private:
+                        //     double accountBalance; // This is the Data hiding concept
+                        //                            // these data are not accessible anymore.
+                        //     string password;
 
-                            public:
-                            string userName ;
-                            string accountId;
-                        };
+                        //     public:
+                        //     string userName ;
+                        //     string accountId;
+                        // };
 
 
                         // Constructor Call
 
-                        class studennt{
-                            public: 
-                            studennt(){ // Constructor Made by programmer.
-                                cout << "You Called me!"<<endl; 
-                                dept = "CSE";
-                            };
-                            string name;
-                            double regNo;
-                            string dept;
-                        };
-                        // NOTE:- If a programmer does not make its own costructor then compiler automatically create a constructor 
-                        int main(){
-                            studennt s1; // Constructor call
-                            // cout << s1.dept;
-                        }
+                                                                // class student{
+                                                                //     public: 
+                                                                //     student(){ // Constructor Made by programmer.
+                                                                //         cout << "You Called me!"<<endl; 
+                                                                //         dept = "CSE";
+                                                                //     };
+                                                                //     string name;
+                                                                //     double regNo;
+                                                                //     string dept;
+                                                                // };
+                                                                // NOTE:- If a programmer does not make its own costructor then compiler automatically create a constructor 
+                                                                // int main()
+                                                                // {
+                                                                //     student s1; // Constructor call
+                                                                //     cout << s1.dept;
+                                                                // }
                             // Properties of Constructor 
                             // 1.Name Same as class
                             // 2.constructor does not have a return type 
                             // 3.Only called once (automatically) ,at Object creation .
                             // 4.Memory allocation happens when costructor is called .
-                            
+                // Types of Constructors :
+                        // 1. Non - parameterized Constructor
 
-            // 2.Abstraction    --> 
+
+                                                                // #include<iostream>
+                                                                // #include<string>
+                                                                // using namespace std;
+
+                                                                // class Teacher {
+                                                                //     // Non - parameterised Constructor Example .
+                                                                //     public:
+                                                                //         Teacher(){
+                                                                //              salary=50000;
+                                                                //         }
+                                                                //     int salary;
+                                                                // };
+
+                                                                // int main(){
+                                                                //     Teacher Anand_Kamal;
+                                                                //     cout <<"Anand Kamal Salary is : " <<Anand_Kamal.salary;
+                                                                // }
+
+
+                        // 2. Parameterised Constructor
+
+                                                            // #include<iostream>
+                                                            // #include<string>
+                                                            // using namespace std;
+
+                                                            // class teacher {
+                                                            //     public:
+                                                            //         string name;
+                                                            //         string dept;
+                                                            //         int salary;
+                                                            //         teacher(string n,string dep,int sal){
+                                                            //             name = n;
+                                                            //             dept = dep;
+                                                            //             salary = sal;
+                                                            //         }
+                                                            //         void getInfo(){
+                                                            //             cout << "Name : " << name;
+                                                            //             cout << "dept : " << dept;
+                                                            //         }
+                                                            // };
+
+                                                            // int main(){
+                                                            //     teacher Shanu("Ritik", "CSE",50000);
+                                                            //     Shanu.getInfo();
+                                                            // }
+            // Note : If we make Multiple constructor in a single class , this phenomenon is known as Contructor Overloading. 
+            // 2.Abstraction    -->     
             // 3.Inheritance 
             // 4.Polymorphism
