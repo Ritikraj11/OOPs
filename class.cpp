@@ -177,7 +177,7 @@ int main(){
                         // 3 . Copy Constructor--->  Special Constructor(default ) used to copy properties of one object into another.
 
                                                             // <code/>
-                                                                #include<iostream>
+                                                          /*     #include<iostream>
                                                                 #include<string>
                                                                 using namespace std;
 
@@ -215,6 +215,84 @@ int main(){
                                                                     Teacher Ritik(shanu); // Custom copy custructor
                                                                     Ritik.getInfo();
                                                                 }
+                                                                    */ 
+
+
+                                              /*  types of copy that copy constructor made :
+                                                    1. Shallow copy :--> A Shallow copy of an object copies all the members value from one object to another.
+                                                    
+                                                            eg.   <code />
+                                                                   
+                                                    #include<iostream>
+                                                    #include<string.h>
+                                                    using namespace std;
+
+                                                    class student{
+                                                        public:
+                                                        string name;
+                                                        float cgpa;
+
+                                                        student(string name , float cgpa){
+                                                            this ->name = name;
+                                                            this ->cgpa = cgpa;
+                                                        }
+                                                        student(student &origianl)
+                                                        {
+                                                            this->name= origianl.name;
+                                                            this->cgpa = origianl.cgpa;
+                                                        }
+                                                        void getInfo(){
+                                                            cout<<"name : "<<name<<endl;
+                                                            cout<<"cgpa : "<<cgpa<<endl;
+                                                        }
+                                                    };
+
+                                                    int main(){
+                                                        student shanu("Ritik",8.54);
+                                                        student babu(shanu);
+                                                        babu.getInfo();
+                                                    }
+                                        */ 
+
+                               /*       Diadvantages of shallow copy costructor
+                            --> Problem arises in shallow copy constructor when we use dynamic memory allocation or in simple words we say it pointer(*)
+                            Let's discuss it with the help oof code
+                            
+                                    #include<iostream>
+                                    #include<string.h>
+                                    using namespace std;
+
+                                    class student {
+                                        public:
+                                        string name ;
+                                        float *cgpaptr;
+
+                                        student(string name,float cgpa){
+                                            this->name = name;
+                                            cgpaptr = new float;
+                                            *(this->cgpaptr) = cgpa;
+                                        }
+
+                                        student(student &obj){
+                                            this->name = obj.name;
+                                            this->cgpaptr =obj.cgpaptr;
+                                        }
+                                        void getInfo(){
+                                            cout <<"name : "<<name<<endl;
+                                            cout <<"name : "<<*cgpaptr<<endl;
+
+                                        }
+                                    };
+                                    int main(){
+                                        student shanu("Ritik", 8.64);
+                                        student kala(shanu);
+                                        
+                                        *(kala.cgpaptr)=5.2;
+                                        kala.getInfo();
+                                        return 0;
+                                    }
+
+                                    Problem :---> Here kala ka cgpa effects shanu ka cgpa which we don't Want. */
             // 2.Abstraction    -->     
             // 3.Inheritance 
             // 4.Polymorphism
