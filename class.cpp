@@ -152,7 +152,7 @@ int main(){
                                                                         cout << "Information of Teachers\n";
                                                                     }
                                                                     teacher(string name,string dept,int salary){
-                                                                        this->name = name; // This type of declaration gives no result .
+                                                                        name = name; // This type of declaration gives no result .
                                                                         this->dept = dept; // left dept is for object property and right one is for constructor.
                                                                         this->salary = salary;
                                                                     }
@@ -293,6 +293,130 @@ int main(){
                                     }
 
                                     Problem :---> Here kala ka cgpa effects shanu ka cgpa which we don't Want. */
-            // 2.Abstraction    -->     
-            // 3.Inheritance 
+
+
+                                                // 2. Deep copy :--> It does not only copy the values but also allocates separate memory for the copied object.
+
+                                           /*     #include<iostream>
+                                                #include<string.h>
+                                                using namespace std;
+
+                                                class student {
+                                                    public:
+                                                    string name;
+                                                    float *cgpaptr;
+
+                                                    student(string name, float cgpa) {
+                                                        this->name = name;
+                                                        cgpaptr = new float;
+                                                        *(this->cgpaptr) = cgpa;
+                                                    }
+
+                                                    // Deep copy constructor
+                                                    student(student &obj) {
+                                                        this->name = obj.name;
+                                                        this->cgpaptr = new float; // Allocate new memory
+                                                        *(this->cgpaptr) = *(obj.cgpaptr); // Copy the value
+                                                    }
+
+                                                    void getInfo() {
+                                                        cout << "Name : " << name << endl;
+                                                        cout << "CGPA : " << *cgpaptr << endl;
+                                                    }
+
+                                                    ~student() {
+                                                        delete cgpaptr; // Free allocated memory
+                                                    }
+                                                };
+
+                                                int main() {
+                                                    student shanu("Ritik", 8.64);
+                                                    student kala(shanu);
+
+                                                    *(kala.cgpaptr) = 5.2; // Modify kala's CGPA
+                                                    kala.getInfo();
+                                                    shanu.getInfo(); // Shanu's CGPA remains unaffected
+
+                                                    return 0;
+                                                }*/ 
+
+
+                   /* Destructor :--> Used to deallocate the memory space used by the object after the use of that object
+                    we have to delete the dynamically allocated memory using "delete" function 
+                    */
+
+                                 /*       #include<iostream>
+                                        #include<string.h>
+                                        using namespace std;
+
+                                        class student{
+                                            public:
+                                                string name;
+                                                float *cgpaptr;
+
+                                                student(string name, float cgpa){
+                                                    this->name = name;
+                                                    this->cgpaptr = new float; // Allocate memory for cgpaptr
+                                                    *(this->cgpaptr) = cgpa;
+                                                }
+
+                                                ~student(){
+                                                    cout <<"I just deleted everything but plz delete if you use pointers";
+                                                    delete cgpaptr;
+                                                }
+                                                void getInfo(){
+                                                    cout << "Name : " <<name <<endl;
+                                                    cout << "cgpa : " <<*cgpaptr<<endl;
+                                                }
+                                        };
+
+                                        int main(){
+                                            student shanu("Ritik",9.2);
+                                            shanu.getInfo();
+                                        }  */
+                 
+            // 2.Inheritance --> When properties and member fuunctions of base class is are passed on to the derived class
+
+
+                                        // <code />
+                                               #include<iostream>
+                                               #include<string.h>
+                                               using namespace std;
+                                               
+                                               class person {
+                                                public:
+                                                string name;
+                                                int age ;
+                                                // person();    Defalut constructor call.
+                                                person(string name , int age){
+                                                    this->name = name;
+                                                    this->age  = age ;
+                                                }
+                                               };
+
+                                               class student : public person{
+                                                public:
+                                                int roll;
+/*Way to declare constructor of derived class*/ student (string name,int age ,int roll):person(name,age){
+                                                    this->roll=roll;
+                                                }
+                                                void getInfo(){
+                                                    cout<<"Name : "<<name <<endl;
+                                                    cout<<"age : "<<age <<endl;
+                                                    cout<<"roll : "<<roll <<endl;
+                                                }
+
+                                               };
+
+                                               int main(){
+                                                student shanu("Ritik",21,1234);
+                                                // shanu.age=15;
+                                                // shanu.name="Ritik";
+                                                // shanu.roll=12345;
+                                                shanu.getInfo();
+                                                return 0;
+                                               }
+
+
+            // 3.Abstraction    -->
             // 4.Polymorphism
